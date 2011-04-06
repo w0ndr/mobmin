@@ -1,0 +1,16 @@
+<% content_for :header, "Welcome" %>
+
+<ul class="rounded">
+  <li>Database login</li>
+</ul>
+<form action="show_databases" method="post" class="form">
+  <ul class="rounded">
+    <li>
+      <input type="text" name="username" placeholder="Username" id="username" />
+    </li>
+    <li>
+      <input type="password" name="password" placeholder="Password" id="password" />
+    </li>
+  </ul>
+  <a href="#" class="submit whiteButton" style="margin:10px;color:rgba(0,0,0,.9)">Login</a>
+</form>

@@ -1,0 +1,9 @@
+<% content_for :header, "Tables in #{@database}" %>
+
+<ul class="rounded">
+  <% @tables.each{|table| %>
+  <li class="arrow">
+    <%= link_to "#{table.first}", :action => 'table_detail', :table => table.first %>
+  </li>
+  <% } %>
+</ul>

@@ -1,0 +1,15 @@
+<% content_for :header, "#{@table} detail" %>
+
+<h2>Table info</h2>
+<ul class="rounded">
+  <li>Total table rows: <%= @info["rows"]  %></li>
+  <li>Total table columns: <%= @info["fields"].num_rows %> </li>
+</ul>
+<h2>Column info</h2>
+<% @info["fields"].each{ |field| %>
+<ul class="rounded">
+  <li><span>Name:</span><span><%= field[0] %></span></li>
+  <li><span>Type:</span><span><%= field[1] %></span></li>
+  <li><span>Default value:</span><span><%= field[4] %></span></li>
+</ul>
+<% } %>

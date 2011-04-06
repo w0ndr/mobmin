@@ -1,0 +1,9 @@
+<% content_for :header, "Databases overview" %>
+
+<ul class="rounded">
+  <% @databases.each{|db| %>
+    <li class="arrow">
+      <%= link_to db.first, :action => 'show_tables', :db => db.first %>
+    </li>
+  <% } %>
+</ul>

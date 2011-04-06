@@ -1,0 +1,2 @@
+module MobminHelper
+end

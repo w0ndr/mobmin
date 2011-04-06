@@ -1,0 +1,9 @@
+<% content_for :header, "Data" %>
+
+<% @data["rows"].each{|row| %>
+<ul class="rounded">
+  <% row.each {|column| %>
+    <li><%= @data["legend"][row.index(column)] %>: <%= column %></li>
+  <% } %>
+</ul>
+<% } %>
