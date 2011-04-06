@@ -30,6 +30,11 @@ class MobminController < ApplicationController
     mdao = MobminDao.new
     @data = mdao.show_data(session[:db], session[:table])
   end
+
+  def insert_data
+    mdao = MobminDao.new
+    @info = mdao.table_info(session[:db], session[:table])
+  end
 =begin
   def logged
     mdao = MobminDao.new

@@ -1,0 +1,10 @@
+<% content_for :header, "insert data" %>
+
+<form action="" method="post" class="form">
+<% @info["fields"].each{ |field| %>
+  <ul class="rounded">
+    <li><input type="text" name="<%= field[0] %>" placeholder="<%= field[0] %> [<%= field[1] %>]" id="<%= field[0] %>" class="<%= field[1] %>"/></li>
+  </ul>
+<% } %>
+<a href="#" class="submit whiteButton" style="margin:10px;color:rgba(0,0,0,.9)">Login</a>
+</form>

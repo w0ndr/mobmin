@@ -13,6 +13,8 @@ Mobmin::Application.routes.draw do
 
   get "mobmin/show_data"
 
+  get "mobmin/insert_data"
+
   #post "mobmin/logged"
 
   #get "mobmin/logged"
