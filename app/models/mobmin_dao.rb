@@ -27,8 +27,8 @@ class MobminDao
       ActiveRecord::Base.establish_connection(
         :adapter  => "mysql",
         :host     => "localhost",
-        :username => "root",
-        :password => "st3v3"
+        :username => "",
+        :password => ""
       )
     end
      
