@@ -1,9 +1,45 @@
+<% content_for :back do %>
+	<%= link_to "Back", nil, :class => "back" %>
+<% end %>
 <% content_for :header, "Data" %>
+<% content_for :logout do %>
+	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
+<% end %>
 
-<% @data["rows"].each{|row| %>
+<% @table.rows.each{|row| %>
+<% index = @table.rows.index(row) %>
 <ul class="rounded">
-  <% row.each {|column| %>
-    <li><%= @data["legend"][row.index(column)] %>: <%= column %></li>
+  <% row.each_index {|i| %>
+		<li class="row-<%= index %>"><%= @table.columns[i].name %>: <%= row[i] %><input type="hidden" class="key" value="<%= @table.columns[i].name %>"/><input type="hidden" class="val" value="<%= row[i] %>"/></li>
   <% } %>
+		<li>
+			<ul class="rounded individual lower">
+				<li>
+					<form action="edit_data" method="post" id="ed-<%= index %>">
+						<% row.each_index{ |i| %>
+							<input type="hidden" name="col[<%= i %>]" value="<%= @table.columns[i].type %>"/>
+							<input type="hidden" name="ed[key-<%= i %>]" value="<%= @table.columns[i].name %>"/>
+							<input type="hidden" name="ed[val-<%= i %>]" value="<%= row[i] %>"/>
+						<% } %>
+							<input type="hidden" name="table_name" value="<%= @table.name %>"/>
+							<input type="hidden" name="database_name" value="<%= @table.database %>"/>
+						<%= link_to "Edit", nil, :class => "submit" %>
+					</form>
+				</li>
+				<li>
+					<form action="delete_row" method="post" id="del-<%= index %>">
+						<% row.each_index{ |i| %>
+							<% if !@table.columns[i].type.downcase.include?("blob") %>
+								<input type="hidden" name="del[key-<%= i %>]" value="<%= @table.columns[i].name %>"/>
+								<input type="hidden" name="del[val-<%= i %>]" value="<%= row[i] %>"/>
+							<% end %>
+						<% } %>
+							<input type="hidden" name="table_name" value="<%= @table.name %>"/>
+							<input type="hidden" name="database_name" value="<%= @table.database %>"/>
+						<%= link_to "Delete", nil, :class => "submit row-#{index}" %>
+					</form>
+				</li>
+			</ul>
+		</li>
 </ul>
 <% } %>

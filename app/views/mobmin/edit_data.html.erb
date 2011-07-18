@@ -1,0 +1,42 @@
+<% content_for :back do %>
+	<%= link_to "Back", nil, :class => "back" %>
+<% end %>
+<% content_for :header, "insert data" %>
+<% content_for :logout do %>
+	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
+<% end %>
+
+<form action="update_data" method="post" class="form">
+	<input type="hidden" value="<%= @table.name %>" id="table_name" name="table_name"/>
+	<input type="hidden" value="<%= @table.database %>" id="database_name" name="database_name"/>
+
+	<% @table.columns.each_index{ |i| %>
+		<ul class="rounded">
+			<% blob = @table.columns[i].type.downcase.include?("blob") %>
+			<li><input
+					type="text"
+					value="<%= @table.rows.first[i] %>"
+					<% if !blob %>
+						name="new[<%= i %>]"
+					<% else %>
+						disabled="disabled"
+					<% end %>
+					/>
+					<% if !blob %>
+						<input
+							type="hidden"
+							name="name[<%= i %>]"
+							value="<%= @table.columns[i].name %>"/>
+						<input
+							type="hidden"
+							name="old[<%= i %>]"
+							value="<%= @table.rows.first[i] %>"/>
+					<% end %>
+			</li>
+			<li>
+				<%= @table.columns[i].name + " [ " + @table.columns[i].type + " ]" %>
+			</li>
+		</ul>
+	<% } %>
+	<a href="#" class="submit whiteButton" style="margin:10px;color:rgba(0,0,0,.9)">Update data</a>
+</form>

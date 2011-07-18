@@ -1,23 +1,30 @@
 Mobmin::Application.routes.draw do
-  get "mobmin/index"
+  get "/mobmin/index"
 
-  get "mobmin/show_databases"
+  get "/mobmin/show_databases"
 
-  post "mobmin/show_databases"
+  post "/mobmin/show_databases"
 
-  get "mobmin/show_tables"
+  get "/mobmin/show_tables"
 
-  get "mobmin/table_info"
+  get "/mobmin/table_info"
 
-  get "mobmin/table_detail"
+  get "/mobmin/table_detail"
 
-  get "mobmin/show_data"
+  get "/mobmin/show_data"
 
-  get "mobmin/insert_data"
+  get "/mobmin/insert_data"
 
-  #post "mobmin/logged"
+	post "/mobmin/save_data"
 
-  #get "mobmin/logged"
+	get "/mobmin/logout"
+
+	post "/mobmin/edit_data"
+
+	post "/mobmin/delete_row"
+
+	post "/mobmin/update_data"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -68,7 +75,7 @@ Mobmin::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => "mobmin#index"
+  # root :to => "mobmin#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -10,6 +10,30 @@
    TODO customize this sample style
    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
+ul.pk {
+	border: 1px dotted white;
+}
+ul.lower {
+	margin: 0px 10px;
+}
+
+div.errors {
+	color: red;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 15px;
+	text-align: center;
+	text-shadow:  0px 1px 0px;
+}
+.floaty {
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: rgba(0,0,0, .5) 0px 1px 1px;
+	width: 90%;
+	margin: 0 5%;
+	padding: 5px 10px;
+	background: rgba(255,255,255,.7);
+	color: red;
+}
 /*
 root { 
     display: block;

@@ -1,10 +1,27 @@
+<% content_for :back do %>
+	<%= link_to "Back", nil, :class => "back" %>
+<% end %>
 <% content_for :header, "insert data" %>
+<% content_for :logout do %>
+	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
+<% end %>
 
-<form action="" method="post" class="form">
-<% @info["fields"].each{ |field| %>
-  <ul class="rounded">
-    <li><input type="text" name="<%= field[0] %>" placeholder="<%= field[0] %> [<%= field[1] %>]" id="<%= field[0] %>" class="<%= field[1] %>"/></li>
-  </ul>
-<% } %>
-<a href="#" class="submit whiteButton" style="margin:10px;color:rgba(0,0,0,.9)">Login</a>
+<form action="save_data" method="post" class="form">
+	<input type="hidden" value="<%= @table.name %>" id="table_name" name="ins[table_name]"/>
+	<input type="hidden" value="<%= @table.database %>" id="database_name" name="ins[database_name]"/>
+
+	<ul class="rounded">
+		<% @table.columns.each{ |column| %>
+			<% (column.type.downcase.include?("blob") || column.auto_increment) ? disabled = 'disabled="disabled"' : disabled = nil %>
+			<li><input
+					type="text"
+					name="ins[<%= column.name %>]"
+					placeholder="<%= column.name %> [ <%= column.auto_increment ? 'Autoincrement': column.type %> ]"
+					id="<%= column.name %>"
+					class="<%= column.type %>"
+					<%= disabled %>/>
+			</li>
+		<% } %>
+	</ul>
+	<a href="#" class="submit whiteButton" style="margin:10px;color:rgba(0,0,0,.9)">Insert data</a>
 </form>

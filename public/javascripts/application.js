@@ -2,5 +2,6 @@
 // This file is automatically included by javascript_include_tag :defaults
  $.jQTouch({
           icon: 'jqtouch.png',
-          statusBar: 'black-translucent'
+          statusBar: 'black-translucent',
+					useFastTouch: false
  });

@@ -1,4 +1,10 @@
+<% content_for :back do %>
+	<%= link_to "Back", nil, :class => "back" %>
+<% end %>
 <% content_for :header, "Databases overview" %>
+<% content_for :logout do %>
+	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
+<% end %>
 
 <ul class="rounded">
   <% @databases.each{|db| %>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Mobmin</title>
-  <%= stylesheet_link_tag "/stylesheets/jqtouch.css", "/stylesheets/themes/jqt/theme.min.css" %>
+  <%= stylesheet_link_tag "/stylesheets/jqtouch.css", "/stylesheets/themes/jqt/theme.min.css", "/stylesheets/mobmin.css" %>
   <%= javascript_include_tag "/javascripts/jquery-1.5.1.min.js", "/javascripts/jqtouch.min.js", "/javascripts/application.js" %>
   <style type="text/css" media="screen">
             body.fullscreen #home .info {
@@ -29,19 +30,21 @@
   <div class="current">
 
     <div class="toolbar">
-      <%= link_to "Back", nil, :class => "back" unless current_page? root_path %>
+			<%= yield(:back) %>
       <h1><%= yield(:header) %></h1>
+			<%= yield(:logout) %>
     </div>
+
+		<div class="errors"><%= @error %></div>
 
     <%= yield %>
 
     <div class="info">
-      <% puts @error unless @error.nil? %>
       Generated: <%= DateTime.now  %>
     </div>
 
   </div>
-  
+
 
 </body>
 </html>

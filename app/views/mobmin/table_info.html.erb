@@ -1,15 +1,43 @@
+<% content_for :back do %>
+	<%= link_to "Back", nil, :class => "back" %>
+<% end %>
 <% content_for :header, "#{@table} detail" %>
+<% content_for :logout do %>
+	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
+<% end %>
 
 <h2>Table info</h2>
 <ul class="rounded">
-  <li>Total table rows: <%= @info["rows"]  %></li>
-  <li>Total table columns: <%= @info["fields"].num_rows %> </li>
+  <li>Total table rows: <%= @table_info.row_count  %></li>
+  <li>Total table columns: <%= @table_info.columns.count %> </li>
+	<li>Engine: <%= @table_info.engine %></li>
+	<li>Collation: <%= @table_info.collation %></li>
 </ul>
 <h2>Column info</h2>
-<% @info["fields"].each{ |field| %>
-<ul class="rounded">
-  <li><span>Name:</span><span><%= field[0] %></span></li>
-  <li><span>Type:</span><span><%= field[1] %></span></li>
-  <li><span>Default value:</span><span><%= field[4] %></span></li>
+<% @table_info.columns.each{ |column| %>
+<%private = column.pk ? "pk" : "" %>
+<ul class="rounded <%= private %>">
+  <li><span>Name: </span><span><%= column.name %></span></li>
+  <li><span>Type: </span><span><%= column.type %></span></li>
+	<%if !column.key.eql?("") %>
+		<li>
+			<span><%= column.key %></span>
+		</li>
+	<%end%>
+  <li><span>Default value: </span><span><%= column.def_value %></span></li>
+	<li>
+		<span>Autoincrement: </span>
+		<%if column.auto_increment%>
+			<span>Yes</span>
+		<%else%>
+			<span>No</span>
+		<%end%>
+	</li>
+	<% if !column.collation.nil? %>
+		<li><span>Collation: </span><span><%= column.collation %></span></li>
+	<% end %>
+	<% if !column.comment.eql?("") %>
+		<li><span>Comment: </span><span><%= column.comment %></span></li>
+	<% end %>
 </ul>
 <% } %>
