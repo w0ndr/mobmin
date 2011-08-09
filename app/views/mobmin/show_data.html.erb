@@ -1,5 +1,5 @@
 <% content_for :back do %>
-	<%= link_to "Back", nil, :class => "back" %>
+	<%= link_to "Back", {:action => "table_detail"}, :class => "myBack button fade" %>
 <% end %>
 <% content_for :header, "Data" %>
 <% content_for :logout do %>
@@ -23,6 +23,8 @@
 						<% } %>
 							<input type="hidden" name="table_name" value="<%= @table.name %>"/>
 							<input type="hidden" name="database_name" value="<%= @table.database %>"/>
+							<input type="hidden" value="<%= session[:user] %>" name="user"/>
+							<input type="hidden" value="<%= session[:psw] %>" name="psw"/>
 						<%= link_to "Edit", nil, :class => "submit" %>
 					</form>
 				</li>
@@ -36,7 +38,9 @@
 						<% } %>
 							<input type="hidden" name="table_name" value="<%= @table.name %>"/>
 							<input type="hidden" name="database_name" value="<%= @table.database %>"/>
-						<%= link_to "Delete", nil, :class => "submit row-#{index}" %>
+							<input type="hidden" value="<%= session[:user] %>" name="user"/>
+							<input type="hidden" value="<%= session[:psw] %>" name="psw"/>
+						<%= link_to "Delete", nil, :class => "submit row-#{index}", :onclick => "return confirm('Are you sure?')" %>
 					</form>
 				</li>
 			</ul>

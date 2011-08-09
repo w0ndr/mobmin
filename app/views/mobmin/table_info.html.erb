@@ -1,5 +1,5 @@
 <% content_for :back do %>
-	<%= link_to "Back", nil, :class => "back" %>
+	<%= link_to "Back", {:action => "table_detail"}, :class => "myBack button fade" %>
 <% end %>
 <% content_for :header, "#{@table} detail" %>
 <% content_for :logout do %>
@@ -24,10 +24,18 @@
 			<span><%= column.key %></span>
 		</li>
 	<%end%>
+	<li>
+		<span>Nullable: </span>
+		<% if column.nullable %>
+			<span>Yes</span>
+		<%else%>
+			<span>No</span>
+		<%end%>
+	</li>
   <li><span>Default value: </span><span><%= column.def_value %></span></li>
 	<li>
 		<span>Autoincrement: </span>
-		<%if column.auto_increment%>
+		<%if column.auto_increment %>
 			<span>Yes</span>
 		<%else%>
 			<span>No</span>

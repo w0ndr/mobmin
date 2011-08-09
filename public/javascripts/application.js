@@ -3,5 +3,6 @@
  $.jQTouch({
           icon: 'jqtouch.png',
           statusBar: 'black-translucent',
+					backSelector: '.pica',
 					useFastTouch: false
  });

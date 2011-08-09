@@ -35,12 +35,12 @@
 			<%= yield(:logout) %>
     </div>
 
-		<div class="errors"><%= @error %></div>
-
+		<div class="errors"><%= @error.html_safe if @error %></div>
     <%= yield %>
 
     <div class="info">
-      Generated: <%= DateTime.now  %>
+      Generated: <%= DateTime.now  %><br />
+			main template
     </div>
 
   </div>

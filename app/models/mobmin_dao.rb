@@ -14,7 +14,7 @@ class MobminDao
 	end
 
   def connection()
-    if(!ActiveRecord::Base.connected?)
+#    if(!ActiveRecord::Base.connected?)
 			puts "Conecting ................................."
       ActiveRecord::Base.establish_connection(
         :adapter  => "mysql2",
@@ -22,7 +22,7 @@ class MobminDao
         :username => @user,
         :password => @psw
       )
-    end
+#    end
      
     return ActiveRecord::Base.retrieve_connection
   end
@@ -63,18 +63,21 @@ class MobminDao
 	@return TableInfo object
 =end
   def table_info(database_name, table_name)
-    stmt = "use " + database_name
-    self.connection.execute(stmt)
+#    stmt = "use " + database_name
+#    self.connection.execute(stmt)
 
     table = TableInfo.new(database_name, table_name)
 
 		stmt = "show table status in #{database_name} where name = '#{table_name}'"
+		puts "======================="
+		puts stmt
+		puts self.connection.inspect
     result = self.connection.execute(stmt).to_a.first
     table.row_count = result[4]
 		table.engine = result[1]
 		table.collation = result[14]
 
-    stmt = "show full columns in " + table_name
+    stmt = "show full columns in #{database_name}.#{table_name}"
     fields = self.connection.execute(stmt).to_a
 		fields.each do |field|
 			column = ColumnInfo.new
@@ -103,7 +106,7 @@ class MobminDao
 
     table = table_info(database_name, table_name)
 
-    stmt = "select * from " + table_name
+    stmt = "select * from #{database_name}.#{table_name}"
     result = self.connection.execute(stmt)
 		table.rows = result.to_a
 
@@ -127,7 +130,7 @@ class MobminDao
 
   end
 
-	def insert_data(data = {})
+	def insert_data(data = {}, database_name, table_name)
 
 		if !data.empty?
 
@@ -135,9 +138,9 @@ class MobminDao
 			vals = ""
 
 			data.each_pair { |column, value|
-				if !value.empty? && !(column.eql?("database_name") || column.eql?("table_name"))
-					cols = cols + column + ", "
-					vals = vals + "'" + value + "', "
+				if !value[1].empty?
+					cols = cols + value[0] + ", "
+					vals = vals + "'" + value[1] + "', "
 				end
 			}
 
@@ -148,9 +151,9 @@ class MobminDao
 				vals = vals.chop
 			end
 
-			stmt = "use " + data[:database_name]
-			self.connection.execute(stmt)
-			stmt = "insert into #{data[:table_name]} (#{cols}) values(#{vals})"
+#			stmt = "use " + database_name
+#			self.connection.execute(stmt)
+			stmt = "insert into #{database_name}.#{table_name} (#{cols}) values(#{vals})"
 			puts stmt
 			result = self.connection.execute(stmt)
 			puts result
@@ -164,16 +167,17 @@ class MobminDao
 		size = (row.length / 2).to_i
 		size -= 1
 
-		stmt = "use " + database_name
-		self.connection.execute(stmt)
+#		stmt = "use " + database_name
+#		self.connection.execute(stmt)
 
-		stmt = "delete from " + table_name + " where "
+		stmt = "delete from #{database_name}.#{table_name} where"
 		for i in 0..size
 			key = "key-" + i.to_s
 			val = "val-" + i.to_s
-			stmt += " and " if !(i == 0 || row[val].nil? || row[val].eql?(""))
-			stmt += row[key] + " = " + "'" + row[val] + "'" if !(row[val].nil? || row[val].eql?(""))
+			stmt += " " + row[key] + " = " + "'" + row[val] + "' and" if !(row[val].nil? || row[val].eql?(""))
 		end
+		
+		stmt[-4, 4] = ""
 
 		self.connection.execute(stmt)
 
@@ -185,10 +189,10 @@ class MobminDao
 
 		table = table_info(database_name, table_name)
 
-		stmt = "use " + database_name
-		self.connection.execute(stmt)
+#		stmt = "use " + database_name
+#		self.connection.execute(stmt)
 
-		stmt = "select * from " + table_name + " where"
+		stmt = "select * from #{database_name}.#{table_name} where"
 		data.each_pair { |key, value|
 			if !(value.first.empty? || value.first.eql?(''))
 				stmt += " #{key} = '#{value.first}'"
@@ -202,7 +206,7 @@ class MobminDao
 
 		begin
 		data.each_pair{ |key, value|
-			stmt = "update #{table_name} set "
+			stmt = "update #{database_name}.#{table_name} set "
 			stmt += "#{key} = '#{value[1]}' "
 			stmt += "where"
 			data.each_pair{|k, v|
@@ -224,7 +228,7 @@ class MobminDao
 						index = i
 					end
 				}
-				stmt = "update #{table_name} set "
+				stmt = "update #{database_name}.#{table_name} set "
 				stmt += "#{key} = '#{table.rows.first[index]}' "
 				stmt += "where"
 				data.each_pair{|k, v|

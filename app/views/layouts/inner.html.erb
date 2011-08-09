@@ -1,0 +1,18 @@
+  <div>
+
+    <div class="toolbar">
+			<%= yield(:back) %>
+      <h1><%= yield(:header) %></h1>
+			<%= yield(:logout) %>
+    </div>
+
+		<div class="errors"><%= @error.html_safe if @error %></div>
+
+    <%= yield %>
+
+    <div class="info">
+      Generated: <%= DateTime.now  %><br />
+			inner layout
+    </div>
+
+  </div>

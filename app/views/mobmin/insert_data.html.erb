@@ -1,5 +1,5 @@
 <% content_for :back do %>
-	<%= link_to "Back", nil, :class => "back" %>
+	<%= link_to "Back", {:action => "table_detail"}, :class => "myBack button fade" %>
 <% end %>
 <% content_for :header, "insert data" %>
 <% content_for :logout do %>
@@ -7,18 +7,24 @@
 <% end %>
 
 <form action="save_data" method="post" class="form">
-	<input type="hidden" value="<%= @table.name %>" id="table_name" name="ins[table_name]"/>
-	<input type="hidden" value="<%= @table.database %>" id="database_name" name="ins[database_name]"/>
+	<input type="hidden" value="<%= @table.name %>" id="table_name" name="table_name"/>
+	<input type="hidden" value="<%= @table.database %>" id="database_name" name="database_name"/>
+	<input type="hidden" value="<%= session[:user] %>" name="user"/>
+	<input type="hidden" value="<%= session[:psw] %>" name="psw"/>
 
 	<ul class="rounded">
-		<% @table.columns.each{ |column| %>
-			<% (column.type.downcase.include?("blob") || column.auto_increment) ? disabled = 'disabled="disabled"' : disabled = nil %>
-			<li><input
+		<% @table.columns.each_index{ |i| %>
+			<% (@table.columns[i].type.downcase.include?("blob") || @table.columns[i].auto_increment) ? disabled = 'disabled="disabled"' : disabled = nil %>
+			<li>
+				<input
+					type="hidden"
+					name="key[<%= i %>]"
+					value="<%= @table.columns[i].name %>"/>
+				<input
 					type="text"
-					name="ins[<%= column.name %>]"
-					placeholder="<%= column.name %> [ <%= column.auto_increment ? 'Autoincrement': column.type %> ]"
-					id="<%= column.name %>"
-					class="<%= column.type %>"
+					name="val[<%= i %>]"
+					placeholder="<%= @table.columns[i].name %> [ <%= @table.columns[i].auto_increment ? 'Autoincrement': @table.columns[i].type %> ]"
+					value="<% @table.rows[0][i] if !@table.rows[0].nil?%>"
 					<%= disabled %>/>
 			</li>
 		<% } %>

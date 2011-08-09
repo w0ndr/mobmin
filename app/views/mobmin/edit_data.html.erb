@@ -1,5 +1,5 @@
 <% content_for :back do %>
-	<%= link_to "Back", nil, :class => "back" %>
+	<%= link_to "Back", {:action => "show_data"}, :class => "myBack button fade" %>
 <% end %>
 <% content_for :header, "insert data" %>
 <% content_for :logout do %>
@@ -9,6 +9,8 @@
 <form action="update_data" method="post" class="form">
 	<input type="hidden" value="<%= @table.name %>" id="table_name" name="table_name"/>
 	<input type="hidden" value="<%= @table.database %>" id="database_name" name="database_name"/>
+	<input type="hidden" value="<%= session[:user] %>" name="user"/>
+	<input type="hidden" value="<%= session[:psw] %>" name="psw"/>
 
 	<% @table.columns.each_index{ |i| %>
 		<ul class="rounded">
