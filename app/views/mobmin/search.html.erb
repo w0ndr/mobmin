@@ -1,0 +1,23 @@
+<% content_for :back do %>
+	<%= link_to "Back", {:action => "table_detail"}, :class => "myBack button fade" %>
+<% end %>
+<% content_for :header, "Search" %>
+<% content_for :logout do %>
+	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
+<% end %>
+
+<form action="/search" method="post" class="form">
+	<ul class="rounded">
+		<li>Search for</li>
+		<li class="arrow"><input type="text" placeholder="type here"/></li>
+		<li>in column</li>
+		<li>
+			<select>
+				<% @table.columns.each{|column| %>
+				<option value="<%= column.name %>"><%= column.name %></option>
+				<% }%>
+			</select>
+		</li>
+	</ul>
+	<a href="#" class="submit whiteButton" style="margin:10px;color:rgba(0,0,0,.9)">Submit</a>
+</form>

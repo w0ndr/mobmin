@@ -6921,3 +6921,1878 @@ Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-09 15:14:30 +0200
   Processing by MobminController#index as 
 Rendered mobmin/index.html.erb within layouts/application (1.6ms)
 Completed 200 OK in 10ms (Views: 9.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-09 16:24:05 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 24.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 16:24:08 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=Access+denied+for+user+%27w0ndr%27%40%27localhost%27+%28using+password%3A+NO%29
+Completed 302 Found in 871ms
+
+
+Started GET "/mobmin/index?error=Access+denied+for+user+%27w0ndr%27%40%27localhost%27+%28using+password%3A+NO%29" for 127.0.0.1 at 2011-08-09 16:24:09 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"Access denied for user 'w0ndr'@'localhost' (using password: NO)"}
+Rendered mobmin/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 16:24:24 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 71ms (Views: 33.9ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 16:24:24 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 18ms (Views: 6.2ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-09 16:24:29 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 67ms (Views: 19.5ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-09 16:24:29 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 47ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/table_detail?table=test2" for 127.0.0.1 at 2011-08-09 16:24:31 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test2"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 20ms (Views: 19.9ms)
+
+
+Started GET "/mobmin/table_detail?table=test2" for 127.0.0.1 at 2011-08-09 16:24:31 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test2"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (1.9ms)
+Completed 200 OK in 6ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/insert_data" for 127.0.0.1 at 2011-08-09 16:24:49 +0200
+  Processing by MobminController#insert_data as 
+Rendered mobmin/insert_data.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 95ms (Views: 26.2ms)
+
+
+Started GET "/mobmin/insert_data" for 127.0.0.1 at 2011-08-09 16:24:49 +0200
+  Processing by MobminController#insert_data as 
+Rendered mobmin/insert_data.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 39ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/table_detail" for 127.0.0.1 at 2011-08-09 16:25:18 +0200
+  Processing by MobminController#table_detail as 
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/table_detail" for 127.0.0.1 at 2011-08-09 16:25:18 +0200
+  Processing by MobminController#table_detail as 
+Rendered mobmin/table_detail.html.erb within layouts/inner (1.9ms)
+Completed 200 OK in 7ms (Views: 6.2ms)
+
+
+Started GET "/mobmin/show_data" for 127.0.0.1 at 2011-08-09 16:25:19 +0200
+  Processing by MobminController#show_data as 
+Rendered mobmin/show_data.html.erb within layouts/inner (5.7ms)
+Completed 200 OK in 52ms (Views: 17.1ms)
+
+
+Started GET "/mobmin/show_data" for 127.0.0.1 at 2011-08-09 16:25:19 +0200
+  Processing by MobminController#show_data as 
+Rendered mobmin/show_data.html.erb within layouts/inner (3.9ms)
+Completed 200 OK in 46ms (Views: 9.4ms)
+
+
+Started POST "/mobmin/edit_data" for 127.0.0.1 at 2011-08-09 16:26:32 +0200
+  Processing by MobminController#edit_data as 
+  Parameters: {"col"=>{"0"=>"int(11)", "1"=>"int(11)", "2"=>"varchar(20)"}, "ed"=>{"key-0"=>"id", "val-0"=>"2", "key-1"=>"cislo", "val-1"=>"0", "key-2"=>"test", "val-2"=>""}, "table_name"=>"test2", "database_name"=>"test", "user"=>"root", "psw"=>"st3v3"}
+Rendered mobmin/edit_data.html.erb within layouts/inner (2.2ms)
+Completed 200 OK in 22ms (Views: 21.5ms)
+
+
+Started POST "/mobmin/edit_data" for 127.0.0.1 at 2011-08-09 16:26:32 +0200
+  Processing by MobminController#edit_data as 
+  Parameters: {"col"=>{"0"=>"int(11)", "1"=>"int(11)", "2"=>"varchar(20)"}, "ed"=>{"key-0"=>"id", "val-0"=>"2", "key-1"=>"cislo", "val-1"=>"0", "key-2"=>"test", "val-2"=>""}, "table_name"=>"test2", "database_name"=>"test", "user"=>"root", "psw"=>"st3v3"}
+Rendered mobmin/edit_data.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 6ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/show_data" for 127.0.0.1 at 2011-08-09 16:26:32 +0200
+  Processing by MobminController#show_data as 
+Rendered mobmin/show_data.html.erb within layouts/inner (3.3ms)
+Completed 200 OK in 25ms (Views: 7.1ms)
+
+
+Started GET "/mobmin/show_data" for 127.0.0.1 at 2011-08-09 16:26:32 +0200
+  Processing by MobminController#show_data as 
+Rendered mobmin/show_data.html.erb within layouts/inner (3.6ms)
+Completed 200 OK in 26ms (Views: 7.7ms)
+
+
+Started GET "/mobmin/show_data" for 127.0.0.1 at 2011-08-09 16:26:35 +0200
+  Processing by MobminController#show_data as 
+Rendered mobmin/show_data.html.erb within layouts/inner (3.3ms)
+Completed 200 OK in 22ms (Views: 7.0ms)
+
+
+Started GET "/mobmin/show_data" for 127.0.0.1 at 2011-08-09 16:26:35 +0200
+  Processing by MobminController#show_data as 
+Rendered mobmin/show_data.html.erb within layouts/inner (3.5ms)
+Completed 200 OK in 25ms (Views: 7.2ms)
+
+
+Started POST "/mobmin/edit_data" for 127.0.0.1 at 2011-08-09 16:26:35 +0200
+  Processing by MobminController#edit_data as 
+  Parameters: {"col"=>{"0"=>"int(11)", "1"=>"int(11)", "2"=>"varchar(20)"}, "ed"=>{"key-0"=>"id", "val-0"=>"2", "key-1"=>"cislo", "val-1"=>"0", "key-2"=>"test", "val-2"=>""}, "table_name"=>"test2", "database_name"=>"test", "user"=>"root", "psw"=>"st3v3"}
+Rendered mobmin/edit_data.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 7ms (Views: 6.2ms)
+
+
+Started POST "/mobmin/edit_data" for 127.0.0.1 at 2011-08-09 16:26:35 +0200
+  Processing by MobminController#edit_data as 
+  Parameters: {"col"=>{"0"=>"int(11)", "1"=>"int(11)", "2"=>"varchar(20)"}, "ed"=>{"key-0"=>"id", "val-0"=>"2", "key-1"=>"cislo", "val-1"=>"0", "key-2"=>"test", "val-2"=>""}, "table_name"=>"test2", "database_name"=>"test", "user"=>"root", "psw"=>"st3v3"}
+Rendered mobmin/edit_data.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 7ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-09 16:38:51 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-09 17:05:05 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.9ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 17:05:10 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 811ms (Views: 6.9ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-09 17:05:14 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.2ms)
+Completed 200 OK in 52ms (Views: 6.9ms)
+
+
+Started GET "/mobmin/table_detail?table=test2" for 127.0.0.1 at 2011-08-09 17:05:15 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test2"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (29.6ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (No route matches {:action=>"search", :controller=>"mobmin"}):
+    9: <ul class="rounded">
+    10:   <li class="arrow"><%= link_to "Show table information", :action => "table_info" %></li>
+    11:   <li class="arrow"><%= link_to "Show table data", :action => "show_data" %></li>
+    12: 	<li class="arrow"><%= link_to "Search", :action => "search" %></li>
+    13:   <li class="arrow"><%= link_to "Insert data", :action => "insert_data" %></li>
+    14: </ul>
+  app/views/mobmin/table_detail.html.erb:12:in `_app_views_mobmin_table_detail_html_erb__2790805110412726121_2164568180_82606929433446971'
+  app/controllers/mobmin_controller.rb:44:in `table_detail'
+
+Rendered /Users/w0ndr/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/w0ndr/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/w0ndr/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-09 17:06:14 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 6ms (Views: 5.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 17:06:21 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 514ms (Views: 6.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 17:06:21 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.5ms)
+Completed 200 OK in 18ms (Views: 6.8ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-09 17:06:22 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 17ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/table_detail?table=test2" for 127.0.0.1 at 2011-08-09 17:06:24 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test2"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.7ms)
+
+
+Started GET "/mobmin/search" for 127.0.0.1 at 2011-08-09 17:06:25 +0200
+  Processing by MobminController#search as 
+Rendered mobmin/search.html.erb within layouts/inner (1.5ms)
+Completed 200 OK in 116ms (Views: 5.7ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-09 17:07:00 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 17:07:06 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.2ms)
+Completed 200 OK in 17ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-09 17:07:07 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 39ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/table_detail?table=test2" for 127.0.0.1 at 2011-08-09 17:07:08 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test2"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/search" for 127.0.0.1 at 2011-08-09 17:07:10 +0200
+  Processing by MobminController#search as 
+Rendered mobmin/search.html.erb within layouts/inner (1.5ms)
+Completed 200 OK in 30ms (Views: 4.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-09 19:57:31 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 12.0ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 19:57:43 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=Can%27t+connect+to+local+MySQL+server+through+socket+%27%2Ftmp%2Fmysql.sock%27+%282%29
+Completed 302 Found in 643ms
+
+
+Started GET "/mobmin/index?error=Can%27t+connect+to+local+MySQL+server+through+socket+%27%2Ftmp%2Fmysql.sock%27+%282%29" for 127.0.0.1 at 2011-08-09 19:57:44 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)"}
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 11.6ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 19:57:55 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=Can%27t+connect+to+local+MySQL+server+through+socket+%27%2Ftmp%2Fmysql.sock%27+%282%29
+Completed 302 Found in 10ms
+
+
+Started GET "/mobmin/index?error=Can%27t+connect+to+local+MySQL+server+through+socket+%27%2Ftmp%2Fmysql.sock%27+%282%29" for 127.0.0.1 at 2011-08-09 19:57:55 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)"}
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 10ms (Views: 9.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-09 19:58:21 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 97ms (Views: 18.6ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-09 19:58:24 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (3.0ms)
+Completed 200 OK in 72ms (Views: 11.7ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-09 19:58:25 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (1.9ms)
+Completed 200 OK in 7ms (Views: 6.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:38:36 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 5.0ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:38:37 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=true
+Completed 302 Found in 663ms
+
+
+Started GET "/mobmin/index?error=true" for 127.0.0.1 at 2011-08-10 09:38:38 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"true"}
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 12ms (Views: 11.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:38:50 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.5ms)
+Completed 200 OK in 57ms (Views: 20.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:38:50 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 09:38:53 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 74ms (Views: 19.4ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 09:38:54 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 38ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-10 09:38:55 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 7ms (Views: 6.6ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-10 09:38:55 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.2ms)
+Completed 200 OK in 7ms (Views: 6.8ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:41:12 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 25ms (Views: 24.7ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:41:15 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.5ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:41:25 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:42:11 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 5.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:42:51 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 5.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:44:02 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.6ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:44:16 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=true
+Completed 302 Found in 656ms
+
+
+Started GET "/mobmin/index?error=true" for 127.0.0.1 at 2011-08-10 09:44:17 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"true"}
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 9.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:45:29 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.8ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:45:38 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=true
+Completed 302 Found in 654ms
+
+
+Started GET "/mobmin/index?error=true" for 127.0.0.1 at 2011-08-10 09:45:39 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"true"}
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 10.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:46:49 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:48:08 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.9ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:48:11 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=true
+Completed 302 Found in 731ms
+
+
+Started GET "/mobmin/index?error=true" for 127.0.0.1 at 2011-08-10 09:48:12 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"true"}
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:49:55 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (5.2ms)
+Completed 200 OK in 68ms (Views: 15.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:49:56 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.6ms)
+Completed 200 OK in 19ms (Views: 6.4ms)
+
+
+Started GET "/mobmin/show_tables?db=mysql" for 127.0.0.1 at 2011-08-10 09:49:58 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"mysql"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (5.1ms)
+Completed 200 OK in 94ms (Views: 9.3ms)
+
+
+Started GET "/mobmin/show_tables?db=mysql" for 127.0.0.1 at 2011-08-10 09:49:58 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"mysql"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (5.0ms)
+Completed 200 OK in 39ms (Views: 8.9ms)
+
+
+Started GET "/mobmin/table_detail?table=general_log" for 127.0.0.1 at 2011-08-10 09:50:00 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"general_log"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.2ms)
+Completed 200 OK in 6ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/table_detail?table=general_log" for 127.0.0.1 at 2011-08-10 09:50:00 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"general_log"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 6ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 09:50:02 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (27.3ms)
+Completed 200 OK in 63ms (Views: 31.3ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 09:50:02 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (5.4ms)
+Completed 200 OK in 47ms (Views: 10.6ms)
+
+
+Started GET "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:50:03 +0200
+  Processing by MobminController#show_databases as 
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.8ms)
+Completed 200 OK in 18ms (Views: 6.8ms)
+
+
+Started GET "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:50:03 +0200
+  Processing by MobminController#show_databases as 
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 20ms (Views: 7.8ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 09:50:05 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (19.9ms)
+Completed 200 OK in 61ms (Views: 23.8ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 09:50:05 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 17ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/table_detail?table=test2" for 127.0.0.1 at 2011-08-10 09:50:07 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test2"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/table_detail?table=test2" for 127.0.0.1 at 2011-08-10 09:50:07 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test2"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 7ms (Views: 6.7ms)
+
+
+Started GET "/mobmin/search" for 127.0.0.1 at 2011-08-10 09:50:11 +0200
+  Processing by MobminController#search as 
+Rendered mobmin/search.html.erb within layouts/inner (1.7ms)
+Completed 200 OK in 193ms (Views: 27.8ms)
+
+
+Started GET "/mobmin/search" for 127.0.0.1 at 2011-08-10 09:50:11 +0200
+  Processing by MobminController#search as 
+Rendered mobmin/search.html.erb within layouts/inner (1.7ms)
+Completed 200 OK in 44ms (Views: 5.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:50:54 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:50:57 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=true
+Completed 302 Found in 1162ms
+
+
+Started GET "/mobmin/index?error=true" for 127.0.0.1 at 2011-08-10 09:50:59 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"true"}
+Rendered mobmin/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 10ms (Views: 10.0ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:51:21 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.9ms)
+Completed 200 OK in 62ms (Views: 6.8ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:51:21 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 74ms (Views: 6.3ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 09:51:37 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.6ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:51:39 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index?error=true
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index?error=true" for 127.0.0.1 at 2011-08-10 09:51:39 +0200
+  Processing by MobminController#index as 
+  Parameters: {"error"=>"true"}
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:51:48 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.1ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 09:51:48 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.5ms)
+Completed 200 OK in 17ms (Views: 6.3ms)
+
+
+Started GET "/mobmin/show_tables?db=mysql" for 127.0.0.1 at 2011-08-10 09:51:56 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"mysql"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (5.1ms)
+Completed 200 OK in 50ms (Views: 9.2ms)
+
+
+Started GET "/mobmin/show_tables?db=mysql" for 127.0.0.1 at 2011-08-10 09:51:56 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"mysql"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (4.9ms)
+Completed 200 OK in 20ms (Views: 8.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:03:08 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 5ms (Views: 5.0ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:03:14 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 642ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:03:15 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:03:25 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 35ms (Views: 6.2ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:03:25 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 18ms (Views: 6.2ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:03:32 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.8ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:03:43 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 10:03:45 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 39ms (Views: 5.7ms)
+
+
+Started GET "/mobmin/table_detail?table=test2" for 127.0.0.1 at 2011-08-10 10:03:46 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test2"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 10:03:47 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 17ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:03:48 +0200
+  Processing by MobminController#show_databases as 
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.5ms)
+Completed 200 OK in 18ms (Views: 6.4ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:03:49 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 9.9ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:04:00 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.6ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:04:07 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:04:07 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 10ms (Views: 9.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:04:14 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.2ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:04:14 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 37ms (Views: 6.2ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:04:20 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.8ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:04:26 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 10:04:28 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 17ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-10 10:04:29 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.7ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 10:04:30 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 16ms (Views: 5.7ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-10 10:04:32 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.7ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 10:04:33 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 16ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:04:34 +0200
+  Processing by MobminController#show_databases as 
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 34ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 10:04:37 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 16ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/table_detail?table=testovac%C3%AD_table" for 127.0.0.1 at 2011-08-10 10:04:38 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"testovací_table"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (1.9ms)
+Completed 200 OK in 6ms (Views: 5.4ms)
+
+
+Started GET "/mobmin/search" for 127.0.0.1 at 2011-08-10 10:04:39 +0200
+  Processing by MobminController#search as 
+Rendered mobmin/search.html.erb within layouts/inner (1.9ms)
+Completed 200 OK in 91ms (Views: 5.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:07:16 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:07:17 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 464ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:07:18 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 9.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:08:07 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 10ms
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:08:07 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:08:07 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 12ms (Views: 12.1ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:08:07 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 12ms (Views: 11.7ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:08:34 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.8ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:08:37 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 12ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:08:37 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 9.8ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:13:40 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:17:20 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 5.1ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:17:23 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 472ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:17:23 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 10ms (Views: 9.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:17:33 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.6ms)
+Completed 200 OK in 18ms (Views: 6.6ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:17:59 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:18:04 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:18:31 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.9ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:19:02 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:19:02 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 9.3ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:21:22 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 13ms (Views: 12.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:21:40 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:22:39 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:25:11 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.9ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:25:18 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 548ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:25:19 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 11ms (Views: 10.3ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:26:20 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 22.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:26:22 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:26:22 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 9.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:26:30 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 24ms (Views: 6.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:28:03 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 5ms (Views: 4.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:28:06 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 504ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:28:06 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 4ms (Views: 4.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:29:38 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:29:41 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 467ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:29:41 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:29:52 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 4.2ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:29:57 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:30:14 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 4.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:30:16 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:30:16 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:30:24 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:30:30 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 17ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:30:58 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:31:00 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 10ms
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:31:00 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:31:00 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:31:00 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (1.0ms)
+Completed 200 OK in 5ms (Views: 4.7ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:31:53 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 4.9ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:32:10 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:32:10 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.8ms)
+Completed 200 OK in 4ms (Views: 4.2ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:32:18 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 40ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 10:32:21 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.8ms)
+Completed 200 OK in 36ms (Views: 7.0ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-10 10:32:22 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 47ms (Views: 47.2ms)
+
+
+Started GET "/mobmin/search" for 127.0.0.1 at 2011-08-10 10:32:24 +0200
+  Processing by MobminController#search as 
+Rendered mobmin/search.html.erb within layouts/inner (1.7ms)
+Completed 200 OK in 88ms (Views: 5.5ms)
+
+
+Started GET "/mobmin/table_detail" for 127.0.0.1 at 2011-08-10 10:32:25 +0200
+  Processing by MobminController#table_detail as 
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.6ms)
+
+
+Started GET "/mobmin/show_data" for 127.0.0.1 at 2011-08-10 10:32:26 +0200
+  Processing by MobminController#show_data as 
+Rendered mobmin/show_data.html.erb within layouts/inner (5.2ms)
+Completed 200 OK in 95ms (Views: 42.1ms)
+
+
+Started GET "/mobmin/table_detail" for 127.0.0.1 at 2011-08-10 10:32:28 +0200
+  Processing by MobminController#table_detail as 
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/table_info" for 127.0.0.1 at 2011-08-10 10:32:29 +0200
+  Processing by MobminController#table_info as 
+Rendered mobmin/table_info.html.erb within layouts/inner (19.4ms)
+Completed 200 OK in 78ms (Views: 63.8ms)
+
+
+Started GET "/mobmin/table_detail" for 127.0.0.1 at 2011-08-10 10:32:30 +0200
+  Processing by MobminController#table_detail as 
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 10:32:31 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 17ms (Views: 5.6ms)
+
+
+Started GET "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:32:31 +0200
+  Processing by MobminController#show_databases as 
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.2ms)
+
+
+Started GET "/mobmin/logout" for 127.0.0.1 at 2011-08-10 10:32:33 +0200
+  Processing by MobminController#logout as 
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 10ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:32:34 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 9ms (Views: 9.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:34:09 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 6ms (Views: 5.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:34:12 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 626ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:34:12 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:34:20 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.5ms)
+Completed 200 OK in 33ms (Views: 6.5ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 10:34:21 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.2ms)
+Completed 200 OK in 42ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-10 10:34:23 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 6ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 10:34:24 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.2ms)
+Completed 200 OK in 17ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:34:24 +0200
+  Processing by MobminController#show_databases as 
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 35ms (Views: 6.2ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:34:25 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 10ms (Views: 10.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:35:56 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:36:15 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 468ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:36:15 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:36:51 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.5ms)
+Completed 200 OK in 57ms (Views: 6.4ms)
+
+
+Started GET "/mobmin/show_tables?db=offroad" for 127.0.0.1 at 2011-08-10 10:36:53 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"offroad"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.6ms)
+Completed 200 OK in 72ms (Views: 7.1ms)
+
+
+Started GET "/mobmin/table_detail?table=person" for 127.0.0.1 at 2011-08-10 10:36:54 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"person"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 10:36:55 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.7ms)
+Completed 200 OK in 19ms (Views: 7.2ms)
+
+
+Started GET "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:36:55 +0200
+  Processing by MobminController#show_databases as 
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.9ms)
+Completed 200 OK in 41ms (Views: 7.6ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:36:56 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 11ms (Views: 10.3ms)
+
+
+Started GET "/mobmin/logout" for 127.0.0.1 at 2011-08-10 10:36:58 +0200
+  Processing by MobminController#logout as 
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 10ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:36:58 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 10ms (Views: 9.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:38:09 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.8ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:38:29 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 474ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:38:30 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:38:39 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 54ms (Views: 6.2ms)
+
+
+Started GET "/mobmin/show_tables?db=offroad" for 127.0.0.1 at 2011-08-10 10:38:40 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"offroad"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.9ms)
+Completed 200 OK in 41ms (Views: 7.5ms)
+
+
+Started GET "/mobmin/table_detail?table=person" for 127.0.0.1 at 2011-08-10 10:38:41 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"person"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 6ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/logout" for 127.0.0.1 at 2011-08-10 10:38:43 +0200
+  Processing by MobminController#logout as 
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 10ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:38:43 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:39:14 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.6ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:39:16 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:39:16 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:39:21 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 10:39:23 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 42ms (Views: 5.8ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-10 10:39:24 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.6ms)
+
+
+Started GET "/mobmin/show_tables" for 127.0.0.1 at 2011-08-10 10:39:25 +0200
+  Processing by MobminController#show_tables as 
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 17ms (Views: 5.7ms)
+
+
+Started GET "/mobmin/logout" for 127.0.0.1 at 2011-08-10 10:39:26 +0200
+  Processing by MobminController#logout as 
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 9ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:39:26 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 4ms (Views: 4.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:42:41 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/inner (1.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:43:53 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.6ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:43:55 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 516ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:43:55 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:44:03 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.4ms)
+Completed 200 OK in 17ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/show_tables?db=offroad" for 127.0.0.1 at 2011-08-10 10:44:04 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"offroad"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 17ms (Views: 5.9ms)
+
+
+Started GET "/mobmin/logout" for 127.0.0.1 at 2011-08-10 10:44:05 +0200
+  Processing by MobminController#logout as 
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 9ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:44:05 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (1.0ms)
+Completed 200 OK in 5ms (Views: 4.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:44:17 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 10ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:44:17 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 4ms (Views: 4.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:51:13 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/inner (1.1ms)
+Completed 200 OK in 13ms (Views: 13.2ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:51:31 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 3ms (Views: 2.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:52:45 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/inner (1.1ms)
+Completed 200 OK in 3ms (Views: 3.0ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:52:49 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/inner (1.0ms)
+Completed 200 OK in 3ms (Views: 2.8ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:52:56 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 3ms (Views: 2.7ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:53:18 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/inner (1.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:53:44 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/inner (1.1ms)
+Completed 200 OK in 3ms (Views: 3.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:54:54 +0200
+  Processing by MobminController#index as HTML
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `session' for nil:NilClass):
+  app/controllers/mobmin_controller.rb:7:in `index'
+
+Rendered /Users/w0ndr/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/w0ndr/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /Users/w0ndr/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:55:08 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.9ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:55:11 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 562ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:55:12 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/w0ndr/.rvm/rubies/ruby-1.9.2-p180/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:56:56 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 5ms (Views: 4.9ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:57:02 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 478ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:57:03 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (1.0ms)
+Completed 200 OK in 5ms (Views: 4.6ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:57:14 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:57:21 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 12ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:57:21 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:57:27 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 37ms (Views: 6.3ms)
+
+
+Started GET "/mobmin/logout" for 127.0.0.1 at 2011-08-10 10:57:37 +0200
+  Processing by MobminController#logout as 
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 10ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:57:37 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:57:39 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:57:39 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 4ms (Views: 4.1ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:57:44 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.0ms)
+
+
+Started GET "/mobmin/logout" for 127.0.0.1 at 2011-08-10 10:57:46 +0200
+  Processing by MobminController#logout as 
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 9ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:57:46 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:58:10 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.7ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:58:12 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 12ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:58:12 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 23ms (Views: 4.5ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:58:19 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.0ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:58:25 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:58:25 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 4ms (Views: 4.2ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:58:29 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.8ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:58:31 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:58:31 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (1.0ms)
+Completed 200 OK in 5ms (Views: 4.9ms)
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:58:45 +0200
+  Processing by MobminController#index as HTML
+Rendered mobmin/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 20ms (Views: 19.3ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:58:47 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"", "password"=>"[FILTERED]"}
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 11ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:58:47 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms)
+
+
+Started POST "/mobmin/show_databases" for 127.0.0.1 at 2011-08-10 10:58:52 +0200
+  Processing by MobminController#show_databases as 
+  Parameters: {"username"=>"root", "password"=>"[FILTERED]"}
+Rendered mobmin/show_databases.html.erb within layouts/inner (2.3ms)
+Completed 200 OK in 17ms (Views: 6.1ms)
+
+
+Started GET "/mobmin/show_tables?db=test" for 127.0.0.1 at 2011-08-10 10:58:56 +0200
+  Processing by MobminController#show_tables as 
+  Parameters: {"db"=>"test"}
+Rendered mobmin/show_tables.html.erb within layouts/inner (20.3ms)
+Completed 200 OK in 60ms (Views: 23.9ms)
+
+
+Started GET "/mobmin/table_detail?table=test3" for 127.0.0.1 at 2011-08-10 10:58:57 +0200
+  Processing by MobminController#table_detail as 
+  Parameters: {"table"=>"test3"}
+Rendered mobmin/table_detail.html.erb within layouts/inner (1.9ms)
+Completed 200 OK in 6ms (Views: 5.5ms)
+
+
+Started GET "/mobmin/table_info" for 127.0.0.1 at 2011-08-10 10:58:58 +0200
+  Processing by MobminController#table_info as 
+Rendered mobmin/table_info.html.erb within layouts/inner (2.1ms)
+Completed 200 OK in 78ms (Views: 25.5ms)
+
+
+Started GET "/mobmin/table_detail" for 127.0.0.1 at 2011-08-10 10:58:59 +0200
+  Processing by MobminController#table_detail as 
+Rendered mobmin/table_detail.html.erb within layouts/inner (2.0ms)
+Completed 200 OK in 6ms (Views: 5.6ms)
+
+
+Started GET "/mobmin/logout" for 127.0.0.1 at 2011-08-10 10:59:00 +0200
+  Processing by MobminController#logout as 
+Redirected to http://localhost:3000/mobmin/index
+Completed 302 Found in 10ms
+
+
+Started GET "/mobmin/index" for 127.0.0.1 at 2011-08-10 10:59:00 +0200
+  Processing by MobminController#index as 
+Rendered mobmin/index.html.erb within layouts/inner (0.9ms)
+Completed 200 OK in 5ms (Views: 4.4ms)

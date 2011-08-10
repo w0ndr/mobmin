@@ -3,13 +3,22 @@ require 'table_info'
 class MobminController < ApplicationController
 
   def index
+		puts "======================"
+		puts session[:error].inspect
 
-		 if params[:error]
-			@error = "Error during database login<br />" + params[:error]
-		 end
+		if session[:error]
+			@error = session[:error].to_s
+
+			render :layout => 'inner'
+		end
+
+		session[:error] = nil
+
   end
 
   def show_databases
+
+		session[:error] = nil
     
 		session[:user] = params[:username] if !params[:username].nil?
 		session[:psw] = params[:password] if !params[:password].nil?
@@ -20,8 +29,8 @@ class MobminController < ApplicationController
 				@databases = mdao.show_databases()
 				render :layout => 'inner'
 			rescue Exception => ex
-				puts ex.message
-				redirect_to :action => "index", :error => ex.message.sub("Mysql2::", "")
+				session[:error] = ex.message.sub("Mysql2::", "")
+				redirect_to :action => "index"
 			end
     
   end
@@ -37,7 +46,6 @@ class MobminController < ApplicationController
 
   def table_detail
 
-#    session[:table] = @table = params[:table]
 		session[:table] = params[:table] if !params[:table].nil?
 		@table = session[:table]
 
@@ -56,7 +64,7 @@ class MobminController < ApplicationController
   def show_data
 
 		if params[:error]
-			@error = "Error while updating data<br />" + session[:db_error].to_s
+			@error = "Error while saving data<br />" + session[:error].to_s
 		end
 
     mdao = MobminDao.new(session[:user], session[:psw])
@@ -68,7 +76,7 @@ class MobminController < ApplicationController
   def insert_data
 
 		if params[:error]
-			@error = "Error while saving data<br />" + params[:error]
+			@error = "Error while saving data<br />" + session[:error].to_s
 		end
     mdao = MobminDao.new(session[:user], session[:psw])
     @table = mdao.table_info(session[:db], session[:table])
@@ -100,7 +108,8 @@ class MobminController < ApplicationController
 			mdao.insert_data(data, params[:database_name], params[:table_name])
 			redirect_to :action => "show_data"
 		rescue Exception => e
-			redirect_to :action => "insert_data", :error => e.message.sub("Mysql2::", ""), :data => data
+			session[:error] = e.message.sub("Mysql2::", "")
+			redirect_to :action => "insert_data", :error => true
 		end
 
 	end
@@ -119,7 +128,6 @@ class MobminController < ApplicationController
 	end
 
 	def edit_data
-#		@table = TableInfo.new(params[:database_name], params[:table_name])
 		@table = TableInfo.new(session[:db], session[:table])
 		row = []
 		size = params[:col].size
@@ -159,11 +167,18 @@ class MobminController < ApplicationController
 		if result.eql?("")
 			redirect_to :action => "show_data"
 		else
-			session[:db_error] = result
+			session[:error] = result
 			redirect_to :action => "show_data", :error => "true"
 		end
 
 
+	end
+
+	def search
+		mdao = MobminDao.new(session[:user], session[:psw])
+    @table = mdao.table_info(session[:db], session[:table])
+
+		render :layout => 'inner'
 	end
 
 	def logout
@@ -174,6 +189,8 @@ class MobminController < ApplicationController
 		session[:psw] = nil
 
 		redirect_to :action => "index"
+		session[:error] = nil
+		session[:error] = "Successfully logged out"
 
 	end
 

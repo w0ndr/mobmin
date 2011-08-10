@@ -69,9 +69,6 @@ class MobminDao
     table = TableInfo.new(database_name, table_name)
 
 		stmt = "show table status in #{database_name} where name = '#{table_name}'"
-		puts "======================="
-		puts stmt
-		puts self.connection.inspect
     result = self.connection.execute(stmt).to_a.first
     table.row_count = result[4]
 		table.engine = result[1]

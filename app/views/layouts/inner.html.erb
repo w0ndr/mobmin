@@ -6,13 +6,16 @@
 			<%= yield(:logout) %>
     </div>
 
-		<div class="errors"><%= @error.html_safe if @error %></div>
+ 		<% if !@error.nil? %>
+			<ul class="rounded errors">
+				<li><%= @error.html_safe %></li>
+			</ul>
+		<% end %>
 
     <%= yield %>
 
     <div class="info">
       Generated: <%= DateTime.now  %><br />
-			inner layout
     </div>
 
   </div>
