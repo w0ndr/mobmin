@@ -3,8 +3,6 @@ require 'table_info'
 class MobminController < ApplicationController
 
   def index
-		puts "======================"
-		puts session[:error].inspect
 
 		if session[:error]
 			@error = session[:error].to_s
@@ -39,6 +37,7 @@ class MobminController < ApplicationController
 
     session[:db] = params[:db] if !params[:db].nil?
     mdao = MobminDao.new(session[:user], session[:psw])
+		@database = session[:db]
     @tables = mdao.show_tables(session[:db])
 
 		render :layout => 'inner'
@@ -128,6 +127,11 @@ class MobminController < ApplicationController
 	end
 
 	def edit_data
+		session[:user] = params[:user]
+		session[:psw] = params[:psw]
+		session[:db] = params[:database_name]
+		session[:table] = params[:table_name]
+
 		@table = TableInfo.new(session[:db], session[:table])
 		row = []
 		size = params[:col].size

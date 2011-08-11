@@ -1,7 +1,7 @@
 <% content_for :back do %>
 	<%= link_to "Back", {:action => "table_detail"}, :class => "myBack button fade" %>
 <% end %>
-<% content_for :header, "insert data" %>
+<% content_for :header, "#{@table.name} insert data" %>
 <% content_for :logout do %>
 	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
 <% end %>
@@ -14,7 +14,7 @@
 
 	<ul class="rounded">
 		<% @table.columns.each_index{ |i| %>
-			<% (@table.columns[i].type.downcase.include?("blob") || @table.columns[i].auto_increment) ? disabled = 'disabled="disabled"' : disabled = nil %>
+			<% (@table.columns[i].type.downcase.include?("blob")) ? disabled = 'disabled="disabled"' : disabled = nil %>
 			<li>
 				<input
 					type="hidden"

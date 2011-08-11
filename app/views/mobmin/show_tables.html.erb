@@ -1,7 +1,7 @@
 <% content_for :back do %>
 	<%= link_to "Back", {:action => "show_databases"}, :class => "myBack button fade" %>
 <% end %>
-<% content_for :header, "Tables in #{@database}" %>
+<% content_for :header, "#{@database}" %>
 <% content_for :logout do %>
 	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
 <% end %>

@@ -14,7 +14,6 @@ class MobminDao
 	end
 
   def connection()
-#    if(!ActiveRecord::Base.connected?)
 			puts "Conecting ................................."
       ActiveRecord::Base.establish_connection(
         :adapter  => "mysql2",
@@ -22,7 +21,6 @@ class MobminDao
         :username => @user,
         :password => @psw
       )
-#    end
      
     return ActiveRecord::Base.retrieve_connection
   end
@@ -63,8 +61,6 @@ class MobminDao
 	@return TableInfo object
 =end
   def table_info(database_name, table_name)
-#    stmt = "use " + database_name
-#    self.connection.execute(stmt)
 
     table = TableInfo.new(database_name, table_name)
 
@@ -138,7 +134,7 @@ class MobminDao
 				if !value[1].empty?
 					cols = cols + value[0] + ", "
 					vals = vals + "'" + value[1] + "', "
-				end
+				end if !value[1].nil?
 			}
 
 			if !cols.empty?
@@ -148,8 +144,6 @@ class MobminDao
 				vals = vals.chop
 			end
 
-#			stmt = "use " + database_name
-#			self.connection.execute(stmt)
 			stmt = "insert into #{database_name}.#{table_name} (#{cols}) values(#{vals})"
 			puts stmt
 			result = self.connection.execute(stmt)
@@ -164,14 +158,11 @@ class MobminDao
 		size = (row.length / 2).to_i
 		size -= 1
 
-#		stmt = "use " + database_name
-#		self.connection.execute(stmt)
-
 		stmt = "delete from #{database_name}.#{table_name} where"
 		for i in 0..size
 			key = "key-" + i.to_s
 			val = "val-" + i.to_s
-			stmt += " " + row[key] + " = " + "'" + row[val] + "' and" if !(row[val].nil? || row[val].eql?(""))
+			stmt += " " + row[key] + " = " + "'" + row[val] + "' and" if !row[val].nil?
 		end
 		
 		stmt[-4, 4] = ""
@@ -185,9 +176,6 @@ class MobminDao
 		error = ""
 
 		table = table_info(database_name, table_name)
-
-#		stmt = "use " + database_name
-#		self.connection.execute(stmt)
 
 		stmt = "select * from #{database_name}.#{table_name} where"
 		data.each_pair { |key, value|
