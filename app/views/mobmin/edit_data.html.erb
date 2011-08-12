@@ -18,6 +18,9 @@
 			<li><input
 					type="text"
 					value="<%= @table.rows.first[i] %>"
+					<% if @table.rows.first[i].nil? %>
+						placeholder="NULL"
+					<% end %>
 					<% if !blob %>
 						name="new[<%= i %>]"
 					<% else %>
@@ -31,7 +34,9 @@
 							value="<%= @table.columns[i].name %>"/>
 						<input
 							type="hidden"
-							name="old[<%= i %>]"
+							<% if !@table.rows.first[i].nil? %>
+								name="old[<%= i %>]"
+							<% end %>
 							value="<%= @table.rows.first[i] %>"/>
 					<% end %>
 			</li>

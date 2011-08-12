@@ -120,7 +120,7 @@ class MobminController < ApplicationController
 		session[:psw] = params[:psw]
 
 		mdao = MobminDao.new(session[:user], session[:psw])
-		mdao.delete_row(params[:del],session[:db], session[:table])
+		mdao.delete_row(params[:del], params[:nil], session[:db], session[:table])
 
 		redirect_to :action => "show_data"
 

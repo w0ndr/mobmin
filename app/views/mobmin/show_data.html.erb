@@ -7,43 +7,53 @@
 <% end %>
 
 <% @table.rows.each{|row| %>
-<% index = @table.rows.index(row) %>
 <ul class="rounded">
   <% row.each_index {|i| %>
-		<li class="row-<%= index %>"><%= @table.columns[i].name %>: <%= row[i] %><input type="hidden" class="key" value="<%= @table.columns[i].name %>"/><input type="hidden" class="val" value="<%= row[i] %>"/></li>
+		<% if row[i].nil? %>
+			<li><%= @table.columns[i].name %>: <em>NULL</em></li>
+		<% else %>
+			<li><%= @table.columns[i].name %>: <%= row[i] %></li>
+		<% end %>
   <% } %>
-		<li>
-			<ul class="rounded individual lower">
-				<li>
-					<form action="edit_data" method="post" id="ed-<%= index %>">
-						<% row.each_index{ |i| %>
-							<input type="hidden" name="col[<%= i %>]" value="<%= @table.columns[i].type %>"/>
-							<input type="hidden" name="ed[key-<%= i %>]" value="<%= @table.columns[i].name %>"/>
-							<input type="hidden" name="ed[val-<%= i %>]" value="<%= row[i] %>"/>
-						<% } %>
-							<input type="hidden" name="table_name" value="<%= @table.name %>"/>
-							<input type="hidden" name="database_name" value="<%= @table.database %>"/>
-							<input type="hidden" value="<%= session[:user] %>" name="user"/>
-							<input type="hidden" value="<%= session[:psw] %>" name="psw"/>
-						<%= link_to "Edit", nil, :class => "submit" %>
-					</form>
-				</li>
-				<li>
-					<form action="delete_row" method="post" id="del-<%= index %>">
-						<% row.each_index{ |i| %>
-							<% if !@table.columns[i].type.downcase.include?("blob") %>
-								<input type="hidden" name="del[key-<%= i %>]" value="<%= @table.columns[i].name %>"/>
-								<input type="hidden" name="del[val-<%= i %>]" value="<%= row[i] %>"/>
-							<% end %>
-						<% } %>
-							<input type="hidden" name="table_name" value="<%= @table.name %>"/>
-							<input type="hidden" name="database_name" value="<%= @table.database %>"/>
-							<input type="hidden" value="<%= session[:user] %>" name="user"/>
-							<input type="hidden" value="<%= session[:psw] %>" name="psw"/>
-						<%= link_to "Delete", nil, :class => "submit row-#{index}", :onclick => "return confirm('Are you sure?')" %>
-					</form>
-				</li>
-			</ul>
-		</li>
 </ul>
+
+<div class="editBar">
+	<form action="edit_data" method="post">
+		<% row.each_index{ |i| %>
+			<input type="hidden" name="col[<%= i %>]" value="<%= @table.columns[i].type %>"/>
+			<input type="hidden" name="ed[key-<%= i %>]" value="<%= @table.columns[i].name %>"/>
+			<% if !row[i].nil? %>
+				<input type="hidden" name="ed[val-<%= i %>]" value="<%= row[i] %>"/>
+			<% end %>
+		<% } %>
+			<input type="hidden" name="table_name" value="<%= @table.name %>"/>
+			<input type="hidden" name="database_name" value="<%= @table.database %>"/>
+			<input type="hidden" value="<%= session[:user] %>" name="user"/>
+			<input type="hidden" value="<%= session[:psw] %>" name="psw"/>
+		<%= link_to "Edit", nil, :class => "submit whiteButtonShortL" %>
+	</form>
+	<form action="delete_row" method="post">
+		<% row.each_index{ |i|
+			 	 ok = 0
+				 null = 0 %>
+			<% if !@table.columns[i].type.downcase.include?("blob") %>
+				<% if row[i].nil? %>
+					<input type="hidden" name="nil[key-<%= null %>]" value="<%= @table.columns[i].name %>"/>
+					<% null += 1 %>
+				<% else %>
+					<input type="hidden" name="del[key-<%= ok %>]" value="<%= @table.columns[i].name %>"/>
+					<input type="hidden" name="del[val-<%= ok %>]" value="<%= row[i] %>"/>
+					<% ok += 1 %>
+				<% end %>
+			<% end %>
+		<% } %>
+			<input type="hidden" name="table_name" value="<%= @table.name %>"/>
+			<input type="hidden" name="database_name" value="<%= @table.database %>"/>
+			<input type="hidden" value="<%= session[:user] %>" name="user"/>
+			<input type="hidden" value="<%= session[:psw] %>" name="psw"/>
+			<%= link_to "Delete", nil, :class => "submit whiteButtonShortR" %>
+	</form>
+	<div class="clr"></div>
+</div>
+<hr />
 <% } %>

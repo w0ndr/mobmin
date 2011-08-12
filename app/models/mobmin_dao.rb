@@ -145,15 +145,13 @@ class MobminDao
 			end
 
 			stmt = "insert into #{database_name}.#{table_name} (#{cols}) values(#{vals})"
-			puts stmt
 			result = self.connection.execute(stmt)
-			puts result
 
 		end
 
 	end
 
-	def delete_row(row = {}, database_name, table_name)
+	def delete_row(row = {}, nils = {}, database_name, table_name)
 
 		size = (row.length / 2).to_i
 		size -= 1
@@ -162,10 +160,19 @@ class MobminDao
 		for i in 0..size
 			key = "key-" + i.to_s
 			val = "val-" + i.to_s
-			stmt += " " + row[key] + " = " + "'" + row[val] + "' and" if !row[val].nil?
+			stmt += " #{row[key]} = '#{row[val]}' and" if !row[val].nil?
+		end
+
+		if !nils.nil?
+			size = nils.size - 1
+			for i in 0..size
+				key = "key-" + i.to_s
+				stmt += " #{nils[key]} is NULL and"
+			end
 		end
 		
 		stmt[-4, 4] = ""
+		stmt += " limit 1"
 
 		self.connection.execute(stmt)
 
@@ -179,12 +186,15 @@ class MobminDao
 
 		stmt = "select * from #{database_name}.#{table_name} where"
 		data.each_pair { |key, value|
-			if !(value.first.empty? || value.first.eql?(''))
+			if !value.first.nil?
 				stmt += " #{key} = '#{value.first}'"
-				stmt += " and"
+			else
+				stmt += " #{key} is NULL"
 			end
+			stmt += " and"
 		}
 		stmt[-4,4] = ""
+		stmt += " limit 1"
 
     result = self.connection.execute(stmt)
 		table.rows = result.to_a
@@ -192,14 +202,20 @@ class MobminDao
 		begin
 		data.each_pair{ |key, value|
 			stmt = "update #{database_name}.#{table_name} set "
-			stmt += "#{key} = '#{value[1]}' "
+			if value[1].nil? || value[1].eql?('')
+				value[1] = ''
+			end
+				stmt += "#{key} = '#{value[1]}' "
 			stmt += "where"
 			data.each_pair{|k, v|
-				if k != key
-					stmt += " #{k} = '#{v[0]}' and"
-				end
+					if v[0].nil? # || v[0].eql?('')
+						stmt += " #{k} is NULL and"
+					else
+						stmt += " #{k} = '#{v[0]}' and"
+					end
 			}
 			stmt[-4, 4] = ""
+			stmt += " limit 1"
 
 			self.connection.execute(stmt)
 			data[key][0] = value[1]
@@ -214,12 +230,20 @@ class MobminDao
 					end
 				}
 				stmt = "update #{database_name}.#{table_name} set "
-				stmt += "#{key} = '#{table.rows.first[index]}' "
+				if table.rows.first[index].nil?
+					stmt += "#{key} = NULL "
+				else
+					stmt += "#{key} = '#{table.rows.first[index]}' "
+				end
 				stmt += "where"
 				data.each_pair{|k, v|
-					if k != key
-						stmt += " #{k} = '#{v[0]}' and"
-					end
+#					if k != key
+						if v[0].nil?
+							stmt += " #{k} is NULL and"
+						else
+							stmt += " #{k} = '#{v[0]}' and"
+						end
+#					end
 				}
 				stmt[-4, 4] = ""
 
