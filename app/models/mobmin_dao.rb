@@ -64,13 +64,13 @@ class MobminDao
 
     table = TableInfo.new(database_name, table_name)
 
-		stmt = "show table status in #{database_name} where name = '#{table_name}'"
+		stmt = "SHOW TABLE STATUS IN #{database_name} WHERE NAME = '#{table_name}'"
     result = self.connection.execute(stmt).to_a.first
     table.row_count = result[4]
 		table.engine = result[1]
 		table.collation = result[14]
 
-    stmt = "show full columns in #{database_name}.#{table_name}"
+    stmt = "SHOW FULL COLUMNS IN #{database_name}.#{table_name}"
     fields = self.connection.execute(stmt).to_a
 		fields.each do |field|
 			column = ColumnInfo.new
@@ -95,11 +95,16 @@ class MobminDao
 	@param table_name			name of the table
 	@return TableInfo object
 =end
-  def show_data(database_name, table_name)
+  def show_data(database_name, table_name, where, what)
 
     table = table_info(database_name, table_name)
 
-    stmt = "select * from #{database_name}.#{table_name}"
+		if !where.nil? && !what.nil?
+			stmt = "SELECT * FROM #{database_name}.#{table_name} WHERE #{where} LIKE '%#{what}%'"
+		else
+    	stmt = "SELECT * FROM #{database_name}.#{table_name}"
+		end
+
     result = self.connection.execute(stmt)
 		table.rows = result.to_a
 
@@ -123,6 +128,13 @@ class MobminDao
 
   end
 
+=begin
+	Method inserts data into specified table in database
+
+	@param data 					hash array with values to be saved
+	@param database_name 	name of database that table belongs to
+	@param table_name			name of the table
+=end
 	def insert_data(data = {}, database_name, table_name)
 
 		if !data.empty?
@@ -144,78 +156,94 @@ class MobminDao
 				vals = vals.chop
 			end
 
-			stmt = "insert into #{database_name}.#{table_name} (#{cols}) values(#{vals})"
+			stmt = "INSERT INTO #{database_name}.#{table_name} (#{cols}) VALUES(#{vals})"
 			result = self.connection.execute(stmt)
 
 		end
 
 	end
 
+=begin
+	Method removes data from specified table in database
+
+	@param row	 					hash array with values to be removed
+	@param nils						hash array with NULL values
+	@param database_name 	name of database that table belongs to
+	@param table_name			name of the table
+=end
 	def delete_row(row = {}, nils = {}, database_name, table_name)
 
 		size = (row.length / 2).to_i
 		size -= 1
 
-		stmt = "delete from #{database_name}.#{table_name} where"
+		stmt = "DELETE FROM #{database_name}.#{table_name} WHERE"
 		for i in 0..size
 			key = "key-" + i.to_s
 			val = "val-" + i.to_s
-			stmt += " #{row[key]} = '#{row[val]}' and" if !row[val].nil?
+			stmt += " #{row[key]} = '#{row[val]}' AND" if !row[val].nil?
 		end
 
 		if !nils.nil?
 			size = nils.size - 1
 			for i in 0..size
 				key = "key-" + i.to_s
-				stmt += " #{nils[key]} is NULL and"
+				stmt += " #{nils[key]} IS NULL AND"
 			end
 		end
 		
 		stmt[-4, 4] = ""
-		stmt += " limit 1"
+		stmt += " LIMIT 1"
 
 		self.connection.execute(stmt)
 
 	end
 
+=begin
+	This method updates selected row with provided data. It provides basic transaction service.
+	In case of database error during update process, it return the original data into database.
+
+	@param data						hash array of original data and new data to be updated
+	@param database_name 	name of database that table belongs to
+	@param table_name			name of the table
+=end
 	def update_row(data = {}, database_name, table_name)
 
 		error = ""
 
 		table = table_info(database_name, table_name)
 
-		stmt = "select * from #{database_name}.#{table_name} where"
+		stmt = "SELECT * FROM #{database_name}.#{table_name} WHERE"
 		data.each_pair { |key, value|
 			if !value.first.nil?
 				stmt += " #{key} = '#{value.first}'"
 			else
-				stmt += " #{key} is NULL"
+				stmt += " #{key} IS NULL"
 			end
-			stmt += " and"
+			stmt += " AND"
 		}
 		stmt[-4,4] = ""
-		stmt += " limit 1"
+		stmt += " LIMIT 1"
 
     result = self.connection.execute(stmt)
 		table.rows = result.to_a
 
 		begin
 		data.each_pair{ |key, value|
-			stmt = "update #{database_name}.#{table_name} set "
+			stmt = "UPDATE #{database_name}.#{table_name} SET "
 			if value[1].nil? || value[1].eql?('')
 				value[1] = ''
 			end
 				stmt += "#{key} = '#{value[1]}' "
-			stmt += "where"
+			stmt += "WHERE"
 			data.each_pair{|k, v|
-					if v[0].nil? # || v[0].eql?('')
-						stmt += " #{k} is NULL and"
+					if v[0].nil? 
+						stmt += " #{k} IS NULL AND"
 					else
-						stmt += " #{k} = '#{v[0]}' and"
+						stmt += " #{k} = '#{v[0]}' AND"
 					end
 			}
 			stmt[-4, 4] = ""
-			stmt += " limit 1"
+			stmt += " LIMIT 1"
 
 			self.connection.execute(stmt)
 			data[key][0] = value[1]
@@ -229,21 +257,19 @@ class MobminDao
 						index = i
 					end
 				}
-				stmt = "update #{database_name}.#{table_name} set "
+				stmt = "UPDATE #{database_name}.#{table_name} SET "
 				if table.rows.first[index].nil?
 					stmt += "#{key} = NULL "
 				else
 					stmt += "#{key} = '#{table.rows.first[index]}' "
 				end
-				stmt += "where"
+				stmt += "WHERE"
 				data.each_pair{|k, v|
-#					if k != key
 						if v[0].nil?
-							stmt += " #{k} is NULL and"
+							stmt += " #{k} IS NULL AND"
 						else
-							stmt += " #{k} = '#{v[0]}' and"
+							stmt += " #{k} = '#{v[0]}' AND"
 						end
-#					end
 				}
 				stmt[-4, 4] = ""
 
@@ -252,12 +278,24 @@ class MobminDao
 				data[key][0] = table.rows.first[index]
 			}
 
-			error = e.message
+			error = e.message.sub("Mysql2::", "")
 		end
 
 		return error
 
 	end
 
+=begin
+	Method provides basic searching in database. By calling show_data method
+
+	@param what						data that are searched for
+	@param where 					column that are searched in
+	@param database_name 	name of database that table belongs to
+	@param table_name			name of the table
+	@return Table_info object with data that matched constraints
+=end
+	def search(what, where, database_name, table_name)
+		return show_data(database_name, table_name, where, what)
+	end
 
 end

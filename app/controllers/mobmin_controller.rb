@@ -67,7 +67,7 @@ class MobminController < ApplicationController
 		end
 
     mdao = MobminDao.new(session[:user], session[:psw])
-    @table = mdao.show_data(session[:db], session[:table])
+    @table = mdao.show_data(session[:db], session[:table], nil, nil)
 
 		render :layout => 'inner'
   end
@@ -183,6 +183,19 @@ class MobminController < ApplicationController
     @table = mdao.table_info(session[:db], session[:table])
 
 		render :layout => 'inner'
+	end
+
+	def search_result
+		session[:db] = params[:database_name]
+		session[:table] = params[:table_name]
+		session[:user] = params[:user]
+		session[:psw] = params[:psw]
+
+		mdao = MobminDao.new(session[:user], session[:psw])
+		@table = mdao.search(params[:val], params[:col], session[:db], session[:table])
+
+		render :layout => 'inner', :template => 'mobmin/show_data'
+
 	end
 
 	def logout

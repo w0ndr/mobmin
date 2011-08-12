@@ -6,13 +6,19 @@
 	<%= link_to "Logout", {:controller => "mobmin", :action => "logout"}, :class => "button flip", :id =>"infoButton" %>
 <% end %>
 
-<form action="/search" method="post" class="form">
+<form action="search_result" method="post" class="form">
 	<ul class="rounded">
-		<li>Search for</li>
-		<li class="arrow"><input type="text" placeholder="type here"/></li>
+		<li>Search for data that contain</li>
+		<li>
+			<input type="hidden" name="database_name" value="<%= @table.database %>"/>
+			<input type="hidden" name="table_name" value="<%= @table.name %>"/>
+			<input type="hidden" name="user" value="<%= session[:user] %>"/>
+			<input type="hidden" name="psw" value="<%= session[:psw] %>"/>
+			<input type="text" name="val" placeholder="type here"/>
+		</li>
 		<li>in column</li>
 		<li>
-			<select>
+			<select name="col">
 				<% @table.columns.each{|column| %>
 				<option value="<%= column.name %>"><%= column.name %></option>
 				<% }%>

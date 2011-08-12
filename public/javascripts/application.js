@@ -3,6 +3,7 @@
  $.jQTouch({
           icon: 'jqtouch.png',
           statusBar: 'black-translucent',
-					backSelector: '.pica',
+					fullScreen: true,
+					fullScreenClass: 'fullscreen',
 					useFastTouch: false
  });

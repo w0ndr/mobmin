@@ -27,6 +27,8 @@ Mobmin::Application.routes.draw do
 
 	get "/mobmin/search"
 
+	post "/mobmin/search_result"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
