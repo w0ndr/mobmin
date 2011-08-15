@@ -8,13 +8,10 @@
 
 <ul class="rounded">
 	<li class="arrow"><%=link_to "Insert data", :action => "insert_data" %></li>
-
-<% if !@table.rows.empty? %>
 	<li class="arrow"><%=link_to "Search", :action => "search" %></li>
 </ul>
-<% else %>
-</ul>
 
+<% if @table.rows.empty? %>
 <ul class="rounded">
 	<li>No data found in database</li>
 </ul>

@@ -100,7 +100,7 @@ class MobminDao
     table = table_info(database_name, table_name)
 
 		if !where.nil? && !what.nil?
-			stmt = "SELECT * FROM #{database_name}.#{table_name} WHERE #{where} LIKE '%#{what}%'"
+			stmt = "SELECT * FROM #{database_name}.#{table_name} WHERE #{where} LIKE '#{what}'"
 		else
     	stmt = "SELECT * FROM #{database_name}.#{table_name}"
 		end
@@ -283,19 +283,6 @@ class MobminDao
 
 		return error
 
-	end
-
-=begin
-	Method provides basic searching in database. By calling show_data method
-
-	@param what						data that are searched for
-	@param where 					column that are searched in
-	@param database_name 	name of database that table belongs to
-	@param table_name			name of the table
-	@return Table_info object with data that matched constraints
-=end
-	def search(what, where, database_name, table_name)
-		return show_data(database_name, table_name, where, what)
 	end
 
 end

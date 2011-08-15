@@ -192,7 +192,7 @@ class MobminController < ApplicationController
 		session[:psw] = params[:psw]
 
 		mdao = MobminDao.new(session[:user], session[:psw])
-		@table = mdao.search(params[:val], params[:col], session[:db], session[:table])
+		@table = mdao.show_data(session[:db], session[:table], params[:col], params[:val])
 
 		render :layout => 'inner', :template => 'mobmin/show_data'
 
